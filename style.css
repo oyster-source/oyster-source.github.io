@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+h3 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+small {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fa-poo {
+    color: rgb(99, 59, 59);
+}
+
+.loveMe {
+    height: 440px;
+    width: 300px;
+    background: url(https://media.licdn.com/dms/image/v2/D5603AQFhI5TgH5D3Jw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727707877271?e=1735776000&v=beta&t=Vu4TVIZ1ZQ0lE5PvFLcEb_TSie72EdPHT5ZG_KjJ4h4) 
+    no-repeat center center/cover;
+    margin: auto;
+    cursor: pointer;
+    max-width: 100%;
+    position: relative;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.loveMe .fa-poo {
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0); /* Start hidden */
+    opacity: 0;
+    animation: growFadeOut 0.6s ease forwards, reappear 10s 0.6s ease forwards;
+}
+
+/* Phase 1: Grow and fade out */
+@keyframes growFadeOut {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(10);
+        opacity: 0;
+    }
+}
+
+/* Phase 2: Reappear at original size */
+@keyframes reappear {
+    0% {
+        transform: translate(-50%, -50%) scale(2.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 1;
+        color: darkgoldenrod;
+    }
+}
